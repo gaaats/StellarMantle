@@ -213,6 +213,9 @@ class VebbbbActivity : AppCompatActivity() {
             }
         }
 
+        Log.d("lolo", "link is ${linkhyhyhy}")
+
+
         return spoongtgt.getString("SAVED_URL", linkhyhyhy).toString()
     }
 
