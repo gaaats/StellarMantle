@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Stellar Mantle</string>
     <string name="facebook_app_id">847636579656705</string>
+    <string name="facebook_app_prot">fb847636579656705</string>
     <string name="facebook_client_token">63c6a3090b0541bbf78bd871ce9ad35d</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

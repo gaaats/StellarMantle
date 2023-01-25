@@ -7,8 +7,8 @@ import com.artifexmundi.bal.apppi.ApiInterface
 import com.artifexmundi.bal.apppi.CountryRepo
 import com.artifexmundi.bal.apppi.DevRepo
 import com.artifexmundi.bal.apppi.HostInterface
-import com.artifexmundi.bal.vieevmod.BeamModel
-import com.artifexmundi.bal.vieevmod.ViMod
+import com.artifexmundi.bal.vieevmod.BeamModelgtgttg
+import com.artifexmundi.bal.vieevmod.ViModgtgtgtgt
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import org.koin.android.ext.koin.androidApplication
@@ -18,7 +18,31 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-val appModule = module {
+
+
+
+
+fun hyjuujujju(): Gson {
+    return GsonBuilder().create()
+}
+
+val hyjubcehbedbeed = module {
+    viewModel (named("MainModel")){
+        ViModgtgtgtgt((get(named("CountryRep"))), get(named("DevRep")), get(named("SharedPreferences")), get())
+    }
+    viewModel(named("BeamModel")) {
+        BeamModelgtgttg(get())
+    }
+}
+
+fun hujuujujujuj(app: Application): SharedPreferences {
+    return app.applicationContext.getSharedPreferences(
+        "SHARED_PREF",
+        Context.MODE_PRIVATE
+    )
+}
+
+val tggtuihgtuhtghgt = module {
 
     single  <HostInterface> (named("HostInter")){
         get<Retrofit>(named("RetroDev"))
@@ -50,29 +74,9 @@ val appModule = module {
         DevRepo(get(named("HostInter")))
     }
     single{
-        provideGson()
+        hyjuujujju()
     }
     single (named("SharedPreferences")) {
-        provideSharedPref(androidApplication())
-    }
-}
-
-fun provideSharedPref(app: Application): SharedPreferences {
-    return app.applicationContext.getSharedPreferences(
-        "SHARED_PREF",
-        Context.MODE_PRIVATE
-    )
-}
-
-fun provideGson(): Gson {
-    return GsonBuilder().create()
-}
-
-val viewModelModule = module {
-    viewModel (named("MainModel")){
-        ViMod((get(named("CountryRep"))), get(named("DevRep")), get(named("SharedPreferences")), get())
-    }
-    viewModel(named("BeamModel")) {
-        BeamModel(get())
+        hujuujujujuj(androidApplication())
     }
 }

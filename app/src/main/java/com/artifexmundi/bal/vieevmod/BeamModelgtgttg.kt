@@ -9,41 +9,52 @@ import com.onesignal.OneSignal
 import org.json.JSONException
 import org.json.JSONObject
 
-class BeamModel(application: Application): ViewModel() {
-    val pm = application.packageManager
-    fun webSet(webView: WebView): WebSettings{
-       val webViewSet = webView.settings
-        webViewSet.javaScriptEnabled = true
-        webViewSet.useWideViewPort = true
-        webViewSet.loadWithOverviewMode = true
-        webViewSet.allowFileAccess = true
-        webViewSet.domStorageEnabled = true
-        webViewSet.userAgentString = webViewSet.userAgentString.replace("; wv", "")
-        webViewSet.javaScriptCanOpenWindowsAutomatically = true
-        webViewSet.setSupportMultipleWindows(false)
-        webViewSet.displayZoomControls = false
-        webViewSet.builtInZoomControls = true
-        webViewSet.allowFileAccess = true
-        webViewSet.allowContentAccess = true
-        webViewSet.setSupportZoom(true)
-        webViewSet.pluginState = WebSettings.PluginState.ON
-        webViewSet.mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
-        webViewSet.cacheMode = WebSettings.LOAD_DEFAULT
-        webViewSet.allowContentAccess = true
-        webViewSet.mediaPlaybackRequiresUserGesture = false
-        return webViewSet
+class BeamModelgtgttg(application: Application): ViewModel() {
+
+    fun gtjiogtgtihfryugrf(uri: String): Boolean {
+        try {
+            hghyhyhyhy.getPackageInfo("org.telegram.messenger", PackageManager.GET_ACTIVITIES)
+            return true
+        } catch (_: PackageManager.NameNotFoundException) {
+
+        }
+        return false
     }
-    fun pushToOS(id: String) {
+
+    val hghyhyhyhy = application.packageManager
+    fun jujkiik5(webView: WebView): WebSettings{
+       val hy5yh5hy5hy = webView.settings
+        hy5yh5hy5hy.javaScriptEnabled = true
+        hy5yh5hy5hy.useWideViewPort = true
+        hy5yh5hy5hy.loadWithOverviewMode = true
+        hy5yh5hy5hy.allowFileAccess = true
+        hy5yh5hy5hy.domStorageEnabled = true
+        hy5yh5hy5hy.userAgentString = hy5yh5hy5hy.userAgentString.replace("; wv", "")
+        hy5yh5hy5hy.javaScriptCanOpenWindowsAutomatically = true
+        hy5yh5hy5hy.setSupportMultipleWindows(false)
+        hy5yh5hy5hy.displayZoomControls = false
+        hy5yh5hy5hy.builtInZoomControls = true
+        hy5yh5hy5hy.allowFileAccess = true
+        hy5yh5hy5hy.allowContentAccess = true
+        hy5yh5hy5hy.setSupportZoom(true)
+        hy5yh5hy5hy.pluginState = WebSettings.PluginState.ON
+        hy5yh5hy5hy.mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
+        hy5yh5hy5hy.cacheMode = WebSettings.LOAD_DEFAULT
+        hy5yh5hy5hy.allowContentAccess = true
+        hy5yh5hy5hy.mediaPlaybackRequiresUserGesture = false
+        return hy5yh5hy5hy
+    }
+    fun juuj5uj5uj(hyhyyh: String) {
         OneSignal.setExternalUserId(
-            id,
+            hyhyyh,
             object : OneSignal.OSExternalUserIdUpdateCompletionHandler {
                 override fun onSuccess(results: JSONObject) {
                     try {
                         if (results.has("push") && results.getJSONObject("push").has("success")) {
-                            val isPushSuccess = results.getJSONObject("push").getBoolean("success")
+                            val hyjuujkujok = results.getJSONObject("push").getBoolean("success")
                             OneSignal.onesignalLog(
                                 OneSignal.LOG_LEVEL.VERBOSE,
-                                "Set external user id for push status: $isPushSuccess"
+                                "Set external user id for push status: $hyjuujkujok"
                             )
                         }
                     } catch (e: JSONException) {
@@ -51,11 +62,11 @@ class BeamModel(application: Application): ViewModel() {
                     }
                     try {
                         if (results.has("email") && results.getJSONObject("email").has("success")) {
-                            val isEmailSuccess =
+                            val gtjgiunvtbght =
                                 results.getJSONObject("email").getBoolean("success")
                             OneSignal.onesignalLog(
                                 OneSignal.LOG_LEVEL.VERBOSE,
-                                "Set external user id for email status: $isEmailSuccess"
+                                "Set external user id for email status: $gtjgiunvtbght"
                             )
                         }
                     } catch (e: JSONException) {
@@ -63,10 +74,10 @@ class BeamModel(application: Application): ViewModel() {
                     }
                     try {
                         if (results.has("sms") && results.getJSONObject("sms").has("success")) {
-                            val isSmsSuccess = results.getJSONObject("sms").getBoolean("success")
+                            val cvdedftye = results.getJSONObject("sms").getBoolean("success")
                             OneSignal.onesignalLog(
                                 OneSignal.LOG_LEVEL.VERBOSE,
-                                "Set external user id for sms status: $isSmsSuccess"
+                                "Set external user id for sms status: $cvdedftye"
                             )
                         }
                     } catch (e: JSONException) {
@@ -85,13 +96,5 @@ class BeamModel(application: Application): ViewModel() {
 
 
 
-    fun appInstalledOrNot(uri: String): Boolean {
-        try {
-            pm.getPackageInfo("org.telegram.messenger", PackageManager.GET_ACTIVITIES)
-            return true
-        } catch (_: PackageManager.NameNotFoundException) {
 
-        }
-        return false
-    }
 }

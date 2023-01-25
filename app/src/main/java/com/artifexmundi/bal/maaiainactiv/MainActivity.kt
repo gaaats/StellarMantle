@@ -1,9 +1,9 @@
 package com.artifexmundi.bal.maaiainactiv
 
 import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.util.Log
 import com.artifexmundi.bal.R
+import android.os.Bundle
 import io.branch.referral.Branch
 
 class MainActivity : AppCompatActivity() {

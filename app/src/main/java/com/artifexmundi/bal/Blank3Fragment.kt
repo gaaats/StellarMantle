@@ -14,8 +14,7 @@ import kotlin.random.Random
 
 
 class Blank3Fragment : Fragment() {
-    private var fragmentBlank3Binding: FragmentBlank3Binding? = null
-    private val binding get() = fragmentBlank3Binding ?: throw RuntimeException("FragmentBlank3Binding = null")
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,6 +49,9 @@ class Blank3Fragment : Fragment() {
         fragmentBlank3Binding = null
         super.onDestroyView()
     }
+
+    private var fragmentBlank3Binding: FragmentBlank3Binding? = null
+    private val binding get() = fragmentBlank3Binding ?: throw RuntimeException("FragmentBlank3Binding = null")
 
     private fun edfrgtysnackBarError() {
         Snackbar.make(

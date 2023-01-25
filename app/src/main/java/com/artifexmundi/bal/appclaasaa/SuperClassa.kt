@@ -2,12 +2,12 @@ package com.artifexmundi.bal.appclaasaa
 
 import android.app.Application
 import android.content.Context
-import com.artifexmundi.bal.depinj.appModule
-import com.artifexmundi.bal.depinj.viewModelModule
-import com.artifexmundi.bal.otther.Util.ONESIGNAL_APP_ID
-import com.artifexmundi.bal.otther.Util.instId
-import com.artifexmundi.bal.otther.Util.mtKey
-import com.artifexmundi.bal.otther.Util.myId
+import com.artifexmundi.bal.depinj.tggtuihgtuhtghgt
+import com.artifexmundi.bal.depinj.hyjubcehbedbeed
+import com.artifexmundi.bal.otther.Utilgtgtgt.ONESIGNAL_APP_IDhhy
+import com.artifexmundi.bal.otther.Utilgtgtgt.instIdgtgtg
+import com.artifexmundi.bal.otther.Utilgtgtgt.mtKeygttg
+import com.artifexmundi.bal.otther.Utilgtgtgt.hyhyhyhy
 import com.my.tracker.MyTracker
 import com.onesignal.OneSignal
 import io.branch.referral.Branch
@@ -22,38 +22,42 @@ class SuperClassa:Application() {
     override fun onCreate() {
         super.onCreate()
         OneSignal.initWithContext(this)
-        OneSignal.setAppId(ONESIGNAL_APP_ID)
-        Branch.enableTestMode()
+        OneSignal.setAppId(ONESIGNAL_APP_IDhhy)
+        gtkpktgktgjojtjigt()
         Branch.getAutoInstance(this)
 
-        val shP = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
-        val settings = getSharedPreferences("PREFS_NAME", 0)
+        val hujujujik = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+        val jujuujujuj = getSharedPreferences("PREFS_NAME", 0)
 
-        val trackerParams = MyTracker.getTrackerParams()
-        val trackerConfig = MyTracker.getTrackerConfig()
-        val instID = MyTracker.getInstanceId(this)
-        trackerConfig.isTrackingLaunchEnabled = true
-        val IDIN = UUID.randomUUID().toString()
+        val ujikikiikik = MyTracker.getTrackerParams()
+        val hyjuikikikik = MyTracker.getTrackerConfig()
+        val instIDhy2hyhy = MyTracker.getInstanceId(this)
+        hyjuikikikik.isTrackingLaunchEnabled = true
+        val IDINhy = UUID.randomUUID().toString()
 
-        if (settings.getBoolean("my_first_time", true)) {
-            trackerParams.setCustomUserId(IDIN)
-            shP.edit().putString(myId, IDIN).apply()
-            shP.edit().putString(instId, instID).apply()
-            settings.edit().putBoolean("my_first_time", false).apply()
+        if (jujuujujuj.getBoolean("my_first_time", true)) {
+            ujikikiikik.setCustomUserId(IDINhy)
+            hujujujik.edit().putString(hyhyhyhy, IDINhy).apply()
+            hujujujik.edit().putString(instIdgtgtg, instIDhy2hyhy).apply()
+            jujuujujuj.edit().putBoolean("my_first_time", false).apply()
         } else {
-            val shIDIN = shP.getString(myId, IDIN)
-            trackerParams.setCustomUserId(shIDIN)
+            val shIDIN = hujujujik.getString(hyhyhyhy, IDINhy)
+            ujikikiikik.setCustomUserId(shIDIN)
         }
-        MyTracker.initTracker(mtKey, this)
+        MyTracker.initTracker(mtKeygttg, this)
 
         GlobalContext.startKoin {
             androidLogger(Level.DEBUG)
             androidContext(this@SuperClassa)
             modules(
                 listOf(
-                    viewModelModule, appModule
+                    hyjubcehbedbeed, tggtuihgtuhtghgt
                 )
             )
         }
+    }
+
+    private fun gtkpktgktgjojtjigt() {
+        Branch.enableTestMode()
     }
 }

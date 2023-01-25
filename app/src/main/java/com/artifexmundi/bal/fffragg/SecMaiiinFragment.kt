@@ -9,23 +9,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.artifexmundi.bal.R
-import com.artifexmundi.bal.otther.Util
-import com.artifexmundi.bal.otther.Util.codeCode
-import com.artifexmundi.bal.otther.Util.urlMain
-import com.artifexmundi.bal.vieevmod.ViMod
+import com.artifexmundi.bal.otther.Utilgtgtgt
+import com.artifexmundi.bal.otther.Utilgtgtgt.codeCode
+import com.artifexmundi.bal.otther.Utilgtgtgt.urlMainghyyh
+import com.artifexmundi.bal.vieevmod.ViModgtgtgtgt
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 import org.koin.core.qualifier.named
 
 
 class SecMaiiinFragment : Fragment() {
-    val viewMainModel by activityViewModel<ViMod>(named("MainModel"))
-    lateinit var countryDev: String
-    lateinit var wv: String
-    lateinit var apps: String
-    private lateinit var mContext: Context
-
-    val shareP: SharedPreferences by inject(named("SharedPreferences"))
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        gt3tg2t6gt5gt = context
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,34 +32,43 @@ class SecMaiiinFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_sec_maiiin, container, false)
     }
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        mContext = context
-    }
+    val hyhyhyhy by activityViewModel<ViModgtgtgtgt>(named("MainModel"))
+    lateinit var hyjukiikik2: String
+    lateinit var hy2hyhy65yh8: String
+    lateinit var hy2yhhyhy: String
+    private lateinit var gt3tg2t6gt5gt: Context
+
+    val shareP: SharedPreferences by inject(named("SharedPreferences"))
+
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewMainModel.mainId.observe(viewLifecycleOwner) {
+        hyhyhyhy.mainIdgttggt2.observe(viewLifecycleOwner) {
             if (it != null) {
                 val main = it.toString()
                 shareP.edit().putString("mainId", main).apply()
             }
         }
 
-        viewMainModel.geo.observe(viewLifecycleOwner) {
+        hyhyhyhy.geogtgtgt.observe(viewLifecycleOwner) {
             if (it != null) {
 
-                countryDev = it.geo
-                apps = it.appsChecker
-                wv = it.view
+                hyjukiikik2 = it.jukiik
+                hy2yhhyhy = it.hujukiikoloolol
+                hy2hyhy65yh8 = it.hujjiujuj
 
-                shareP.edit().putString(codeCode, countryDev).apply()
-                shareP.edit().putString(Util.apps, apps).apply()
-                shareP.edit().putString(urlMain, wv).apply()
+                shareP.edit().putString(codeCode, hyjukiikik2).apply()
+                shareP.edit().putString(Utilgtgtgt.appsfrfrrfrf, hy2yhhyhy).apply()
+                shareP.edit().putString(urlMainghyyh, hy2hyhy65yh8).apply()
 
-                findNavController().navigate(R.id.action_secMaiiinFragment_to_prefiilFragment)
+                gtotghgthigtht()
             }
         }
+    }
+
+    private fun gtotghgthigtht() {
+        findNavController().navigate(R.id.action_secMaiiinFragment_to_prefiilFragment)
     }
 }

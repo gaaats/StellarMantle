@@ -26,19 +26,35 @@ class Blank1Fragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         try {
 
-            binding.root.background.alpha = 230
+            gtijgtjtgjigtijtigjigt()
 
-            binding.btnVhel.setOnClickListener {
-                findNavController().navigate(R.id.action_blank1Fragment_to_blank2Fragment)
-            }
-            binding.btnDice.setOnClickListener {
-                findNavController().navigate(R.id.action_blank1Fragment_to_blank3Fragment)
-            }
+            gtjjtgjgtjjtgijgt()
 
         } catch (e: Exception) {
             edfrgtysnackBarError()
         }
         super.onViewCreated(view, savedInstanceState)
+    }
+
+    private fun gtijgtjtgjigtijtigjigt() {
+        binding.root.background.alpha = 240
+    }
+
+    private fun gtjjtgjgtjjtgijgt() {
+        gtjgttgjjgtjtgj()
+        gtijojtgjgtjjgt()
+    }
+
+    private fun gtijojtgjgtjjgt() {
+        binding.btnDice.setOnClickListener {
+            findNavController().navigate(R.id.action_blank1Fragment_to_blank3Fragment)
+        }
+    }
+
+    private fun gtjgttgjjgtjtgj() {
+        binding.btnVhel.setOnClickListener {
+            findNavController().navigate(R.id.action_blank1Fragment_to_blank2Fragment)
+        }
     }
 
     override fun onDestroyView() {

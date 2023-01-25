@@ -13,9 +13,9 @@ import android.util.Log
 import android.webkit.*
 import android.widget.Toast
 import com.artifexmundi.bal.databinding.ActivityVebbbbBinding
-import com.artifexmundi.bal.otther.Util.aps_id
-import com.artifexmundi.bal.otther.Util.linkaa
-import com.artifexmundi.bal.otther.Util.myId
+import com.artifexmundi.bal.otther.Utilgtgtgt.aps_idgtgt
+import com.artifexmundi.bal.otther.Utilgtgtgt.linkaagttgtg
+import com.artifexmundi.bal.otther.Utilgtgtgt.hyhyhyhy
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.qualifier.named
 import java.io.File
@@ -24,53 +24,48 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class VebbbbActivity : AppCompatActivity() {
-    private lateinit var bindBeam: ActivityVebbbbBinding
-    lateinit var beam: WebView
-    private var mFilePathCallback: ValueCallback<Array<Uri>>? = null
-    private var mCameraPhotoPath: String? = null
-    private  val INPUT_FILE_REQUEST_CODE = 1
 
-    private val viewBeamModel by viewModel<BeamModel>(
-        named("BeamModel")
-    )
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        bindBeam = ActivityVebbbbBinding.inflate(layoutInflater)
-        beam = WebView(this)
-        setContentView(beam)
-        CookieManager.getInstance().setAcceptCookie(true)
-        CookieManager.getInstance().setAcceptThirdPartyCookies(beam, true)
-        viewBeamModel.webSet(beam)
 
-        beam.webViewClient = CustomView()
-        beam.webChromeClient = ChromeClient()
-        beam.loadUrl(urururururururur())
-    }
+
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 
-        if (requestCode != INPUT_FILE_REQUEST_CODE || mFilePathCallback == null) {
+        if (requestCode != gtjgtjgtji || gjgtjgtjgt == null) {
             super.onActivityResult(requestCode, resultCode, data)
             return
         }
-        var results: Array<Uri>? = null
+        var hyjuujuj2ju2: Array<Uri>? = null
 
         if (resultCode == RESULT_OK) {
             if (data == null) {
-                if (mCameraPhotoPath != null) {
-                    results = arrayOf(Uri.parse(mCameraPhotoPath))
+                if (gjitjgtjigt != null) {
+                    hyjuujuj2ju2 = arrayOf(Uri.parse(gjitjgtjigt))
                 }
             } else {
-                val dataString = data.dataString
-                if (dataString != null) {
-                    results = arrayOf(Uri.parse(dataString))
+                val hyjuujujuj = data.dataString
+                if (hyjuujujuj != null) {
+                    hyjuujuj2ju2 = arrayOf(Uri.parse(hyjuujujuj))
                 }
             }
         }
-        mFilePathCallback!!.onReceiveValue(results)
-        mFilePathCallback = null
+        gjgtjgtjgt!!.onReceiveValue(hyjuujuj2ju2)
+        gjgtjgtjgt = null
         return
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        gtjtgigtji = ActivityVebbbbBinding.inflate(layoutInflater)
+        gtjgtgtjigt = WebView(this)
+        setContentView(gtjgtgtjigt)
+        CookieManager.getInstance().setAcceptCookie(true)
+        CookieManager.getInstance().setAcceptThirdPartyCookies(gtjgtgtjigt, true)
+        bnngkjbgng.jujkiik5(gtjgtgtjigt)
+
+        gtjgtgtjigt.webViewClient = CustomView()
+        gtjgtgtjigt.webChromeClient = ChromeClientggtgt()
+        gtjgtgtjigt.loadUrl(vfbvfbhfvbvf())
     }
 
     inner class CustomView: WebViewClient() {
@@ -79,7 +74,7 @@ class VebbbbActivity : AppCompatActivity() {
                 if (URLUtil.isNetworkUrl(url)) {
                     return false
                 }
-                if (viewBeamModel.appInstalledOrNot(url)) {
+                if (bnngkjbgng.gtjiogtgtihfryugrf(url)) {
 
                     val intent = Intent(Intent.ACTION_VIEW)
                     intent.data = Uri.parse(url)
@@ -106,7 +101,7 @@ class VebbbbActivity : AppCompatActivity() {
 
         override fun onPageFinished(view: WebView?, url: String?) {
             super.onPageFinished(view, url)
-            saveUrl(url)
+            gtjigtjitgogt(url)
         }
 
 
@@ -121,102 +116,108 @@ class VebbbbActivity : AppCompatActivity() {
     }
 
 
-    inner class ChromeClient : WebChromeClient() {
+    private lateinit var gtjtgigtji: ActivityVebbbbBinding
+    lateinit var gtjgtgtjigt: WebView
+    private var gjgtjgtjgt: ValueCallback<Array<Uri>>? = null
+    private var gjitjgtjigt: String? = null
+    private  val gtjgtjgtji = 1
+
+    private val bnngkjbgng by viewModel<BeamModelgtgttg>(
+        named("BeamModel")
+    )
+
+
+
+    inner class ChromeClientggtgt : WebChromeClient() {
 
         override fun onShowFileChooser(
             view: WebView?,
             filePath: ValueCallback<Array<Uri>>?,
             fileChooserParams: FileChooserParams?
         ): Boolean {
-            mFilePathCallback?.onReceiveValue(null)
-            mFilePathCallback = filePath
-            var takePictureIntent: Intent? = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            if (takePictureIntent!!.resolveActivity(packageManager) != null) {
+            gjgtjgtjgt?.onReceiveValue(null)
+            gjgtjgtjgt = filePath
+            var gjgthgtiuhgt: Intent? = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            if (gjgthgtiuhgt!!.resolveActivity(packageManager) != null) {
                 var photoFile: File? = null
                 try {
-                    photoFile = createImageFile()
-                    takePictureIntent.putExtra("PhotoPath", mCameraPhotoPath)
+                    photoFile = gthdeededed()
+                    gjgthgtiuhgt.putExtra("PhotoPath", gjitjgtjigt)
                 } catch (ex: IOException) {
                     Log.e("ErrorOccurred", "Unable to create Image File", ex)
                 }
 
                 if (photoFile != null) {
-                    mCameraPhotoPath = "file:" + photoFile.absolutePath
-                    takePictureIntent.putExtra(
+                    gjitjgtjigt = "file:" + photoFile.absolutePath
+                    gjgthgtiuhgt.putExtra(
                         MediaStore.EXTRA_OUTPUT,
                         Uri.fromFile(photoFile)
                     )
                 } else {
-                    takePictureIntent = null
+                    gjgthgtiuhgt = null
                 }
             }
-            val contentSelectionIntent = Intent(Intent.ACTION_GET_CONTENT)
-            contentSelectionIntent.addCategory(Intent.CATEGORY_OPENABLE)
-            contentSelectionIntent.type = "image/*"
-            val intentArray: Array<Intent?> = takePictureIntent?.let { arrayOf(it) } ?: arrayOfNulls(0)
-            val chooserIntent = Intent(Intent.ACTION_CHOOSER)
-            chooserIntent.putExtra(Intent.EXTRA_INTENT, contentSelectionIntent)
-            chooserIntent.putExtra(Intent.EXTRA_TITLE, "Image Chooser")
-            chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, intentArray)
-            startActivityForResult(chooserIntent, INPUT_FILE_REQUEST_CODE)
+            val intent = Intent(Intent.ACTION_GET_CONTENT)
+            intent.addCategory(Intent.CATEGORY_OPENABLE)
+            intent.type = "image/*"
+            val gtjtgjigt: Array<Intent?> = gjgthgtiuhgt?.let { arrayOf(it) } ?: arrayOfNulls(0)
+            val gtjiotgjigt = Intent(Intent.ACTION_CHOOSER)
+            gtjiotgjigt.putExtra(Intent.EXTRA_INTENT, intent)
+            gtjiotgjigt.putExtra(Intent.EXTRA_TITLE, "Image Chooser")
+            gtjiotgjigt.putExtra(Intent.EXTRA_INITIAL_INTENTS, gtjtgjigt)
+            startActivityForResult(gtjiotgjigt, gtjgtjgtji)
             return true
         }
 
-        fun createImageFile(): File? {
-            val timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
-            val imageFileName = "JPEG_" + timeStamp + "_"
-            val storageDir = Environment.getExternalStoragePublicDirectory(
+        fun gthdeededed(): File? {
+            val timeStamptggtgt = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
+            val imageFileNamegtgt = "JPEG_" + timeStamptggtgt + "_"
+            val storageDirgtgtgt = Environment.getExternalStoragePublicDirectory(
                 Environment.DIRECTORY_PICTURES
             )
             return File.createTempFile(
-                imageFileName,
+                imageFileNamegtgt,
                 ".jpg",
-                storageDir
+                storageDirgtgtgt
             )
         }
     }
 
-    private fun urururururururur(): String {
+    private fun vfbvfbhfvbvf(): String {
 
-        val spoon = getSharedPreferences("SP_WEBVIEW_PREFS", MODE_PRIVATE)
+        val spoongtgt = getSharedPreferences("SP_WEBVIEW_PREFS", MODE_PRIVATE)
 
-        val sharPre = getSharedPreferences("SHARED_PREF",
+        val sharPregttggt = getSharedPreferences("SHARED_PREF",
             Context.MODE_PRIVATE)
 
-        val link = sharPre.getString(linkaa, null)
-        Log.d("lolo", link.toString())
-        val myTrId = sharPre.getString(myId, null)
-        val afId = sharPre.getString(aps_id, null)
+        val linkhyhyhy = sharPregttggt.getString(linkaagttgtg, null)
+        Log.d("lolo", linkhyhyhy.toString())
+        val myTrIdgtgggt = sharPregttggt.getString(hyhyhyhy, null)
+        val afIdgttggtgt = sharPregttggt.getString(aps_idgtgt, null)
 
 
-        when (sharPre.getString("WebInt", null)) {
+        when (sharPregttggt.getString("WebInt", null)) {
             "campaign" -> {
-                Log.d("lolo", "campaign")
-                viewBeamModel.pushToOS(afId.toString())
+                bnngkjbgng.juuj5uj5uj(afIdgttggtgt.toString())
             }
             "deepLink" -> {
-                Log.d("lolo", "deepLink")
 
-                viewBeamModel.pushToOS(afId.toString())
+                bnngkjbgng.juuj5uj5uj(afIdgttggtgt.toString())
             }
             "deepLinkNOApps" -> {
-                Log.d("lolo", "deepLinkNOApps")
 
-                viewBeamModel.pushToOS(myTrId.toString())
+                bnngkjbgng.juuj5uj5uj(myTrIdgtgggt.toString())
             }
             "geo" -> {
-                Log.d("lolo", "geo")
-
-                viewBeamModel.pushToOS(myTrId.toString())
+                bnngkjbgng.juuj5uj5uj(myTrIdgtgggt.toString())
             }
         }
-        Log.d("lolo", link.toString())
 
-        return spoon.getString("SAVED_URL", link).toString()
+        return spoongtgt.getString("SAVED_URL", linkhyhyhy).toString()
     }
 
     var urlfififif = ""
-    fun saveUrl(lurlurlurlurlur: String?) {
+    fun gtjigtjitgogt(lurlurlurlurlur: String?) {
         if (!lurlurlurlurlur!!.contains("t.me")) {
 
             if (urlfififif == "") {
@@ -235,18 +236,18 @@ class VebbbbActivity : AppCompatActivity() {
             }
         }
     }
-    private var exitexitexitexit = false
+    private var hyhyjuujujf = false
     override fun onBackPressed() {
 
-        if (beam.canGoBack()) {
-            if (exitexitexitexit) {
-                beam.stopLoading()
-                beam.loadUrl(urlfififif)
+        if (gtjgtgtjigt.canGoBack()) {
+            if (hyhyjuujujf) {
+                gtjgtgtjigt.stopLoading()
+                gtjgtgtjigt.loadUrl(urlfififif)
             }
-            this.exitexitexitexit = true
-            beam.goBack()
+            this.hyhyjuujujf = true
+            gtjgtgtjigt.goBack()
             Handler(Looper.getMainLooper()).postDelayed({
-                exitexitexitexit = false
+                hyhyjuujujf = false
             }, 2000)
 
         } else {
