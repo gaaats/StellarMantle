@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/baaaaaa"
+    android:layout_height="match_parent"
+    tools:context=".Blank3Fragment">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_hor_05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05" />
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vert_05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_hor_70"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.70" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vert_95"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vert_80"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.80" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vert_90"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.90" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vert_85"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vert_25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vert_75"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/main_lottie"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_95"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_05"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_hor_70"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/dice" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_thov_dice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="@font/montserrat_black"
+        android:text="get chance"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_95"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_05" />
+
+
+
+
+    <ImageView
+        android:id="@+id/btn_img_logo"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:rotation="25"
+        android:src="@drawable/diiiice"
+        app:layout_constraintDimensionRatio="1,1"
+        app:layout_constraintStart_toEndOf="@id/main_lottie"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_85"
+        app:layout_constraintTop_toTopOf="@id/main_lottie" />
+
+    <ImageView
+        android:id="@+id/btn_img_logo_1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="45dp"
+        android:rotation="45"
+        android:src="@drawable/diiiice"
+        app:layout_constraintDimensionRatio="1,1"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_05"
+        app:layout_constraintTop_toTopOf="@id/main_lottie" />
+
+
+    <TextView
+        android:id="@+id/tv_dovn_text_raitlist_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.7"
+        android:fontFamily="@font/montserrat_black"
+        android:text="@string/app_name"
+        android:textAllCaps="true"
+        android:textColor="#D7C6EF"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_thov_dice" />
+
+
+    <ImageView
+        android:id="@+id/img_el1"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintDimensionRatio="1,1"
+        android:scaleType="centerInside"
+        android:src="@drawable/e2"
+        app:layout_constraintEnd_toStartOf="@id/img_el2"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_05"
+        app:layout_constraintTop_toBottomOf="@id/main_lottie"
+        app:layout_constraintBottom_toTopOf="@id/btn_thov_dice"/>
+
+    <ImageView
+        android:id="@+id/img_el2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintDimensionRatio="1,1"
+        android:scaleType="centerInside"
+        android:src="@drawable/e6"
+        app:layout_constraintStart_toEndOf="@id/img_el1"
+        app:layout_constraintEnd_toStartOf="@id/img_el3"
+        app:layout_constraintTop_toBottomOf="@id/main_lottie"
+        app:layout_constraintBottom_toTopOf="@id/btn_thov_dice"/>
+
+    <ImageView
+        android:id="@+id/img_el3"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintDimensionRatio="1,1"
+        android:scaleType="centerInside"
+        android:src="@drawable/e7"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_95"
+        app:layout_constraintStart_toEndOf="@id/img_el2"
+        app:layout_constraintTop_toBottomOf="@id/main_lottie"
+        app:layout_constraintBottom_toTopOf="@id/btn_thov_dice"/>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_title_game_fortune"
+        android:fontFamily="@font/montserrat_black"
+        android:layout_height="wrap_content"
+        android:textAllCaps="true"
+        android:background="@color/purple_500"
+        android:textSize="30sp"
+        android:layout_marginBottom="16dp"
+        android:layout_width="0dp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:textColor="#D8C1FA"
+        android:text="Throwv dice\nget extra bonus"
+        app:layout_constraintBottom_toTopOf="@id/main_lottie"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_95"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_05" />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

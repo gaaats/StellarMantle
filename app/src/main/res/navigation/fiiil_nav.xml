@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fiiil_nav"
+    app:startDestination="@id/maiiinnniFragment">
+
+    <fragment
+        android:id="@+id/maiiinnniFragment"
+        android:name="com.artifexmundi.bal.fffragg.MaiiinnniFragment"
+        android:label="fragment_maiiinnni"
+        tools:layout="@layout/fragment_maiiinnni" >
+        <action
+            android:id="@+id/action_maiiinnniFragment_to_cityFragment"
+            app:destination="@id/cityFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cityFragment"
+        android:name="com.artifexmundi.bal.fffragg.CityFragment"
+        android:label="fragment_city"
+        tools:layout="@layout/fragment_city" >
+        <action
+            android:id="@+id/action_cityFragment_to_secMaiiinFragment"
+            app:destination="@id/secMaiiinFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secMaiiinFragment"
+        android:name="com.artifexmundi.bal.fffragg.SecMaiiinFragment"
+        android:label="fragment_sec_maiiin"
+        tools:layout="@layout/fragment_sec_maiiin" >
+        <action
+            android:id="@+id/action_secMaiiinFragment_to_prefiilFragment"
+            app:destination="@id/prefiilFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/prefiilFragment"
+        android:name="com.artifexmundi.bal.fffragg.PrefiilFragment"
+        android:label="fragment_prefiil"
+        tools:layout="@layout/fragment_prefiil" >
+        <action
+            android:id="@+id/action_prefiilFragment_to_filllFragment"
+            app:destination="@id/filllFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/filllFragment"
+        android:name="com.artifexmundi.bal.fffragg.FilllFragment"
+        android:label="fragment_filll"
+        tools:layout="@layout/fragment_filll" />
+</navigation>
